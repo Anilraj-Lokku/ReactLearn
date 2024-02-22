@@ -4,8 +4,8 @@ import "./App.css";
 //Imagine a complex function that is slow to run which takes a as an argument.
 //In order to speed up this function, you can cache the results of running the function so that when the function is run with the same inputs you can use the cached value instead of recomputing the value. This would look something like this.
 
-//import React, { useState, useMemo } from "react";
-/*function ExpensiveCalculation({ number }) {
+import React, { useState, useMemo } from "react";
+function ExpensiveCalculation({ number }) {
   // Calculate factorial of the number
   const factorial = useMemo(() => {
     console.log("Calculating factorial...");
@@ -37,10 +37,10 @@ function App() {
   );
 }
 
-export default App;*/
+export default App;
 
 //Without useMemo
-/*import React, { useState } from "react";
+import React, { useState } from "react";
 function ExpensiveCalculation({ value }) {
   const calculateResult = (value) => {
     console.log("Calculating...");
@@ -62,9 +62,9 @@ function App() {
     </div>
   );
 }
-export default App;*/
+export default App;
 
-/*import React, { useState, useMemo } from "react";
+import React, { useState, useMemo } from "react";
 function ExpensiveCalculation({ value }) {
   const expensiveResult = useMemo(() => {
     console.log("Calculating...");
@@ -87,7 +87,7 @@ function App() {
 export default App;*/
 
 //More Examples Using useMEMO
-/*import React, { useState, useMemo } from "react";
+import React, { useState, useMemo } from "react";
 function FilteredList({ items, search }) {
   const filteredList = useMemo(() => {
     console.log("Filtering...");
@@ -122,10 +122,9 @@ function App() {
     </div>
   );
 }
-export default App;*/
+export default App;
 
-/*import React, { useState, useMemo } from "react";
-
+import React, { useState, useMemo } from "react";
 function RandomNumberList({ length }) {
   const randomNumbers = useMemo(() => {
     console.log("Generating random numbers...");
@@ -160,7 +159,7 @@ export default App;*/
 //It returns a memoized callback function that only changes if one of the dependencies has changed.
 //Examples
 
-/*import React, { useState, useCallback } from "react";
+import React, { useState, useCallback } from "react";
 function Counter() {
   const [count, setCount] = useState(0);
 
@@ -177,7 +176,7 @@ function Counter() {
     </div>
   );
 }
-export default Counter;*/
+export default Counter;
 
 //Example 2: Memoization of a Function
 
