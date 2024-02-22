@@ -62,11 +62,9 @@ function App() {
     </div>
   );
 }
-
 export default App;*/
 
 /*import React, { useState, useMemo } from "react";
-
 function ExpensiveCalculation({ value }) {
   const expensiveResult = useMemo(() => {
     console.log("Calculating...");
@@ -86,7 +84,6 @@ function App() {
     </div>
   );
 }
-
 export default App;*/
 
 //More Examples Using useMEMO
@@ -125,10 +122,9 @@ function App() {
     </div>
   );
 }
-
 export default App;*/
 
-import React, { useState, useMemo } from "react";
+/*import React, { useState, useMemo } from "react";
 
 function RandomNumberList({ length }) {
   const randomNumbers = useMemo(() => {
@@ -157,5 +153,61 @@ function App() {
     </div>
   );
 }
+export default App;*/
 
-export default App;
+//Use CallBack Examples
+//Definition:useCallback is a React hook used for optimizing performance by memoizing functions.
+//It returns a memoized callback function that only changes if one of the dependencies has changed.
+//Examples
+
+/*import React, { useState, useCallback } from "react";
+function Counter() {
+  const [count, setCount] = useState(0);
+
+  // Define a callback function that increments the count
+  const increment = useCallback(() => {
+    setCount((prevCount) => prevCount + 1);
+  }, []);
+
+  return (
+    <div>
+      <p>Count: {count}</p>
+      // Pass the memoized callback function to the button's onClick handler 
+      <button onClick={increment}>Increment</button>
+    </div>
+  );
+}
+export default Counter;*/
+
+//Example 2: Memoization of a Function
+
+import React, { useState, useCallback } from "react";
+
+function ExpensiveComputation() {
+  const [input, setInput] = useState("");
+  const [result, setResult] = useState(null);
+
+  const computeResult = useCallback((value) => {
+    // Simulate a computationally expensive operation
+    let computedResult = value.split("").reverse().join("");
+    return computedResult;
+  }, []);
+
+  const handleChange = (event) => {
+    setInput(event.target.value);
+  };
+
+  const handleClick = () => {
+    const computedResult = computeResult(input);
+    setResult(computedResult);
+  };
+
+  return (
+    <div>
+      <input type="text" value={input} onChange={handleChange} />
+      <button onClick={handleClick}>Compute Result</button>
+      {result && <p>Result: {result}</p>}
+    </div>
+  );
+}
+export default ExpensiveComputation;
